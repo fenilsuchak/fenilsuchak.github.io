@@ -1,0 +1,64 @@
+nav.nav-wrap
+  transition: all 0.3s ease-in
+  position: absolute
+  top: 2%
+  left: 70%
+  right: 0
+  z-index: 900
+  width: 10000px
+  display: flex
+  justify-content: space-between
+  margin: auto
+  padding: 60px
+  @media screen and (max-width: 600px)
+    padding: 35px 20px
+  a.nav-logo
+    height: 50px
+    svg
+      height: 100%
+      width: auto
+      path
+        fill: $black
+  a.nav-logo.toggle-dark
+    height: 50px
+    svg
+      height: 100%
+      width: auto
+      path
+        fill: $primary
+  ul.navigation
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    @media screen and(max-width: 600px)
+      display: none
+    li
+      display: block
+      padding-right: 30px
+      a
+        color: $green
+        transition: all 0.15s ease-in
+        font-size: 1em
+      a:hover
+        color: darken($green, 25%)
+    li:last-of-type
+      padding-right: 0
+  ul.navigation.nav-dark
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    @media screen and(max-width: 600px)
+      display: none
+    li
+      display: block
+      padding-right: 30px
+      a
+        color: $green
+        transition: all 0.15s ease-in
+      a:hover
+        color: darken($black, 25%)
+    li:last-of-type
+      padding-right: 0
+
