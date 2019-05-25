@@ -239,8 +239,8 @@ nav.nav-wrap {
   transition: all 0.3s ease-in;
   position: absolute;
   top: 2%;
-  left: 70%;
-  right: 0;
+  left: 60%;
+  right: 30%;
   z-index: 900;
   width: 10000px;
   display: flex;
