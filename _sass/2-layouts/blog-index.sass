@@ -6,24 +6,30 @@
   justify-content: center
   align-items: center
   width: 100%
-  height: 650px
+  height: 200px
   max-height: 100vh
   background: $black
     size: cover
     position: center center
     repeat: no-repeat
 .blog-index-title
-  position: relative
+  position: absolute
+  left: 0
   z-index: 5
-  text-align: center
-  padding-top: 10px
+  background: $black
+  max-height: 210px
+  width: 1300px
+  padding-top: 60px
   h1.blog-head
-    max-width: 600px
-    font-size: 4em
+    font-family: $font-stack-two
+    background: $black
+    max-width: 1300px
+    max-height: 120px
+    font-size: 3em
     font-weight: 400
     line-height: 1.2em
-    padding: 0 20px 5px 20px
-    color: $green
+    padding: 0 20px 0px 20px
+    color: $highlight
     margin: 30px 0
     @media screen and(max-width: 500px)
       font-size: 2.5em
@@ -31,3 +37,47 @@
       font-size: 2.1875em
     @media screen and(max-width: 360px)
       font-size: 1.875em
+  h2.welcome-info
+    max-width: 1100px
+    font-size: 1.25em
+    font-weight: 500
+    line-height: 1.2em
+    color: $green
+
+.blogIndexWrapper
+  width: 100%
+  max-width: 1200px
+  margin: 100px 0 20px 0
+  padding: 0 20px
+  flex-direction: column
+  justify-content: space-around
+  align-items: baseline
+  flex-wrap: wrap
+  @media screen and(max-width: 1200px)
+    padding: 0
+
+.blogPostContainer
+  display: block
+  border: 1px solid $highlight
+  border-radius: 50px
+  width: 100%
+  height: auto
+  margin: 0 auto 40px auto
+  max-width: 1200px
+  color: $highlight
+  @media screen and(max-width: 1200px)
+    max-height: 100%
+
+.blogTitle
+  display: inline-block
+  color: $highlight
+  padding-bottom: 0px
+  margin: 40px
+  margin-bottom: 0px
+  font-size: 2.3em
+
+.blogCategory
+  position: relative
+  display: inline-block
+  margin: 40px
+   
