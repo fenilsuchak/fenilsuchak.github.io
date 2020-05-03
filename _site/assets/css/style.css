@@ -91,15 +91,15 @@ template { display: none; }
 
 [hidden] { display: none; }
 
-h1 { font-size: 80px; color: #34beFF; font-weight: normal; }
+h1 { font-size: 80px; color: #34bFFF; font-weight: normal; }
 
-h3 { font-size: 30px; color: #34beFF; font-weight: normal; }
+h3 { font-size: 30px; color: #34bFFF; font-weight: normal; }
 
 * { background-color: #343a40; box-sizing: border-box; transition: all 0.3s ease-in; }
 
 body { margin: 0px; padding: 0px; font-family: "Lora", serif; font-size: 100%; font-weight: 500; }
 
-h6, h5, h4, h2, h1, a, small { padding: 0; margin: 0; text-decoration: none; list-style: none; color: #34beFF; font-family: "Lora", serif; padding: 0px 20px 5px 20px; }
+h6, h5, h4, h2, h1, a, small { padding: 0; margin: 0; text-decoration: none; list-style: none; color: #34bFFF; font-family: "Lora", serif; padding: 0px 20px 5px 20px; }
 
 h3 { text-align: center; font-family: "Lora", serif; padding: 0px 20px 5px 20px; }
 
@@ -117,12 +117,12 @@ nav.nav-wrap ul.navigation { z-index: 555; display: flex; flex-direction: row; j
 @media screen and (max-width: 600px) { nav.nav-wrap ul.navigation { display: none; } }
 nav.nav-wrap ul.navigation li { display: block; padding-top: 15px; padding-right: 30px; }
 nav.nav-wrap ul.navigation li a { color: #FFFFFF; transition: all 0.15s ease-in; font-size: 1.25em; }
-nav.nav-wrap ul.navigation li a:hover { color: #007ab4; }
+nav.nav-wrap ul.navigation li a:hover { color: #007bb4; }
 nav.nav-wrap ul.navigation li:last-of-type { padding-right: 0; }
 nav.nav-wrap ul.navigation.nav-dark { display: flex; flex-direction: row; justify-content: center; align-items: center; }
 @media screen and (max-width: 600px) { nav.nav-wrap ul.navigation.nav-dark { display: none; } }
 nav.nav-wrap ul.navigation.nav-dark li { display: block; padding-right: 30px; }
-nav.nav-wrap ul.navigation.nav-dark li a { color: #34beFF; transition: all 0.15s ease-in; }
+nav.nav-wrap ul.navigation.nav-dark li a { color: #34bFFF; transition: all 0.15s ease-in; }
 nav.nav-wrap ul.navigation.nav-dark li a:hover { color: black; }
 nav.nav-wrap ul.navigation.nav-dark li:last-of-type { padding-right: 0; }
 
@@ -135,31 +135,31 @@ header.header-main a.home-avatar { position: absolute; z-index: 3; height: 180px
 .intro { width: 100%; line-height: 1.8; }
 .intro h2 { padding-top: 7px; padding-left: 47%; font-weight: 400; }
 .intro p { font-family: "Lora", serif; padding-left: 10%; padding-right: 10%; word-spacing: 1.5px; font-size: 1.5em; color: #FFFFFF; animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
-.intro p a { display: inline-block; padding: 0px; margin: 0px; font-weight: 600; color: #34beFF; transition: all 0.15s ease-in-out; }
-.intro p strong { color: #34beFF; }
+.intro p a { display: inline-block; padding: 0px; margin: 0px; font-weight: 600; color: #34bFFF; transition: all 0.15s ease-in-out; }
+.intro p strong { color: #34bFFF; }
 
-.blog-index-header-main { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 200px; max-height: 100vh; background: #343a40; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.blog-index-header-main { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; max-width: 100%; height: 200px; max-height: 100vh; background: #343a40; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
-.blog-index-title { position: absolute; left: 0; z-index: 5; background: #343a40; max-height: 210px; width: 1300px; padding-left: 20px; padding-top: 60px; }
-.blog-index-title h1.blog-head { font-family: "Lora", serif; background: #343a40; max-width: 1300px; max-height: 120px; font-size: 3em; font-weight: 400; line-height: 1.2em; padding: 0 20px 0px 20px; color: #FFFFFF; margin: 30px 0; }
-@media screen and (max-width: 500px) { .blog-index-title h1.blog-head { font-size: 2.5em; } }
-@media screen and (max-width: 400px) { .blog-index-title h1.blog-head { font-size: 2.1875em; } }
-@media screen and (max-width: 360px) { .blog-index-title h1.blog-head { font-size: 1.875em; } }
-.blog-index-title h2.welcome-info { max-width: 1100px; font-size: 1.25em; font-weight: 500; word-spacing: 7px; line-height: 1.2em; color: #34beFF; }
+.blog-index-title { position: absolute; left: 0; z-index: 5; background: #343a40; max-height: 210px; max-width: 100%; padding-left: 20px; padding-top: 60px; max-width: 100%; }
+.blog-index-title h1.blog-head { font-family: "Lora", serif; background: #343a40; max-width: 100%; max-height: 120px; font-size: 3em; font-weight: 400; line-height: 1.2em; padding: 0 20px 0px 20px; color: #FFFFFF; margin: 30px 0; }
+.blog-index-title h2.welcome-info { max-width: 10 0%; font-size: 1.25em; font-weight: 500; word-spacing: 7px; line-height: 1.2em; color: #34bFFF; }
 
-.blogIndexWrapper { width: 100%; max-width: 1200px; margin: 100px 0 20px 0; padding: 0 20px; flex-direction: column; justify-content: space-around; align-items: baseline; flex-wrap: wrap; }
-@media screen and (max-width: 1200px) { .blogIndexWrapper { padding: 0; } }
+.blogIndexWrapper { max-width: 100%; margin: 130px 0 20px 0; padding: 0 20px; flex-direction: column; justify-content: space-around; align-items: baseline; flex-wrap: wrap; }
 
-.blogPostContainer { display: block; border: 1px solid #FFFFFF; border-radius: 50px; width: 100%; height: auto; margin: 0 auto 40px auto; max-width: 1200px; color: #FFFFFF; }
-@media screen and (max-width: 1200px) { .blogPostContainer { max-height: 100%; } }
+.blogPostContainer { display: block; border: 1px solid #FFFFFF; border-radius: 50px; max-width: 100%; height: auto; margin: 0 auto 40px auto; color: #FFFFFF; }
 
 .blogTitle { display: inline-block; color: #FFFFFF; padding-bottom: 0px; margin: 40px; margin-bottom: 0px; font-size: 2.3em; }
 
 .blogCategory { position: relative; display: inline-block; margin: 40px; }
 
-.blog-post-content-wrapper { max-width: 1800px; background: #343a40; margin: 0 auto; }
-.blog-post-content-wrapper p { font-family: "Comic Neue", cursive; color: #FFFFFF; word-spacing: 7px; line-height: 1.8; font-size: 1.6em; }
-.blog-post-content-wrapper p a { color: #34beFF; font-family: "Comic Neue", cursive; }
+.post-index-header-main { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; max-width: 100%; height: 200px; max-height: 100vh; background: #343a40; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+
+.post-index-title { position: relative; left: 0; z-index: 5; background: #343a40; max-height: 210px; max-width: 100%; padding-left: 20px; padding-top: 60px; max-width: 100%; }
+.post-index-title h1.post-head { font-family: "Lora", serif; background: #343a40; max-width: 100%; max-height: 120px; font-size: 3em; font-weight: 400; line-height: 1.2em; padding: 0 20px 0px 0px; color: #FFFFFF; margin: 30px 0; }
+
+.blog-post-content-wrapper { max-width: 1800px; width: 100%; background: #343a40; margin: 0 auto; }
+.blog-post-content-wrapper p { position: relative; font-family: "Comic Neue", cursive; color: #FFFFFF; word-spacing: 7px; line-height: 1.8; font-size: 1.6em; }
+.blog-post-content-wrapper p a { color: #34bFFF; font-family: "Comic Neue", cursive; }
 .blog-post-content-wrapper img { display: block; align: center; margin: auto; width: 40%; overflow: hidden; border-radius: 5px; }
 
 h5.readMore { text-align: center; font-family: "Lora", serif; font-size: 1.6em; color: #FFFFFF; }
