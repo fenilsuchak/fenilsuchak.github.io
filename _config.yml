@@ -17,7 +17,7 @@ title: Fenil Suchak
 email: fenu1998@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi my name is
-baseurl: "fenilsuchak.github.io" # the subpath of your site, e.g. /blog , github repo name if hosting on github
+baseurl: "" # the subpath of your site, e.g. /blog , github repo name if hosting on github
 url: "https://fenilsuchak.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 theme: minimal-mistakes-jekyll
 
