@@ -12,6 +12,8 @@
     size: cover
     position: center center
     repeat: no-repeat
+  @media screen and(max-width: 600px)
+    top: 50%
 .blog-index-title
   position: absolute
   left: 0
@@ -27,29 +29,38 @@
     background: $black
     max-width: 100%
     max-height: 120px
-    font-size: 3em
+    font-size: 5vh
     font-weight: 400
-    line-height: 1.2em
-    padding: 0 20px 0px 20px
+    line-height: 4vh
+    padding-left: 10px
+    padding-right: 10px
     color: $highlight
     margin: 30px 0
   h2.welcome-info
-    max-width: 10 0%
-    font-size: 1.25em
+    font-size: 2.4vh
     font-weight: 500
-    word-spacing: 7px
-    line-height: 1.2em
+    padding-left: 10px
+    padding-right: 10px
+    word-spacing: 0.4vh
+    line-height: 2.5vh
     color: $green
+  @media screen and(max-width: 600px)
+    top: 50%
 
 .blogIndexWrapper
-  max-width: 100%
-  margin: 130px 0 20px 0
-  padding: 0 20px
+  max-width: 70%
+  margin: 4vh 0 20px 0
+  padding-left: 10px
+  padding-right: 10px
+  padding-top: 1vh
   flex-direction: column
   justify-content: space-around
   align-items: baseline
   flex-wrap: wrap
-
+  @media screen and(max-width: 600px)
+    max-width: 100%
+    margin: 20vh 0 20px 0
+    padding-top: 1vh
 .blogPostContainer
   display: block
   border: 1px solid $white
@@ -65,7 +76,7 @@
   padding-bottom: 0px
   margin: 40px
   margin-bottom: 0px
-  font-size: 2.3em
+  font-size: 3.5vh
 
 .blogCategory
   position: relative

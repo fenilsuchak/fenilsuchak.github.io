@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Comfortaa:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=Euphoria+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap");
 html { font-family: sans-serif; line-height: 1.15; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
 body { margin: 0; overflow-x: hidden; }
@@ -97,7 +98,7 @@ h3 { font-size: 30px; color: #34bFFF; font-weight: normal; }
 
 * { background-color: #343a40; box-sizing: border-box; transition: all 0.3s ease-in; }
 
-body { margin: 0px; padding: 0px; font-family: "Lora", serif; font-size: 100%; font-weight: 500; }
+body { margin: 0px; padding: 0px; font-family: "Lora", cursive; font-size: 100%; font-weight: 500; }
 
 h6, h5, h4, h2, h1, a, small { padding: 0; margin: 0; text-decoration: none; list-style: none; color: #34bFFF; font-family: "Lora", serif; padding: 0px 20px 5px 20px; }
 
@@ -105,8 +106,8 @@ h3 { text-align: center; font-family: "Lora", serif; padding: 0px 20px 5px 20px;
 
 p { font-family: "Lora", serif; }
 
-nav.nav-wrap { transition: all 0.3s ease-in; position: absolute; top: 5%; left: 60%; right: 30%; z-index: 55; width: 10000px; display: flex; justify-content: space-between; margin: auto; padding: 60px; }
-@media screen and (max-width: 600px) { nav.nav-wrap { padding: 35px 20px; } }
+nav.nav-wrap { transition: all 0.3s ease-in; position: absolute; top: 5%; left: 60%; right: 30%; z-index: 55; max-width: 1000px; display: flex; justify-content: space-between; margin: auto; }
+@media screen and (max-width: 600px) { nav.nav-wrap { top: 0%; left: 8%; padding-bottom: 0; position: absolute; } }
 nav.nav-wrap a.nav-logo { height: 50px; }
 nav.nav-wrap a.nav-logo svg { height: 100%; width: auto; }
 nav.nav-wrap a.nav-logo svg path { fill: #343a40; }
@@ -114,7 +115,7 @@ nav.nav-wrap a.nav-logo.toggle-dark { height: 50px; }
 nav.nav-wrap a.nav-logo.toggle-dark svg { height: 100%; width: auto; }
 nav.nav-wrap a.nav-logo.toggle-dark svg path { fill: #1C1E24; }
 nav.nav-wrap ul.navigation { z-index: 555; display: flex; flex-direction: row; justify-content: center; align-items: center; }
-@media screen and (max-width: 600px) { nav.nav-wrap ul.navigation { display: none; } }
+@media screen and (max-width: 600px) { nav.nav-wrap ul.navigation { font-size: 1.2vh; position: absolute; padding: 0; flex-direction: row; } }
 nav.nav-wrap ul.navigation li { display: block; padding-top: 15px; padding-right: 30px; }
 nav.nav-wrap ul.navigation li a { color: #FFFFFF; transition: all 0.15s ease-in; font-size: 1.25em; }
 nav.nav-wrap ul.navigation li a:hover { color: #007bb4; }
@@ -126,40 +127,48 @@ nav.nav-wrap ul.navigation.nav-dark li a { color: #34bFFF; transition: all 0.15s
 nav.nav-wrap ul.navigation.nav-dark li a:hover { color: black; }
 nav.nav-wrap ul.navigation.nav-dark li:last-of-type { padding-right: 0; }
 
-header.header-main { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; width: 100%; height: 500px; background-color: #343a40; line-height: 1.8; }
+header.header-main { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; width: 100%; height: 500px; line-height: 1.8; }
 header.header-main .overlay-light { position: absolute; z-index: 2; top: 0; right: 0; bottom: 0; left: 0; background: #343a40; opacity: 0.9; }
-header.header-main .home-title { position: relative; top: 70%; left: 0%; left: 60; z-index: 3; }
-header.header-main a.home-avatar { position: absolute; z-index: 3; height: 180px; width: 180px; margin-top: 100px; border-radius: 60%; background-image: url("../img/fen.jpg"); background-size: cover; background-position: center center; background-repeat: no-repeat; }
-@media screen and (max-width: 355px) { header.header-main a.home-avatar { height: 75px; width: 75px; margin-bottom: -43px; } }
+header.header-main .home-title { position: relative; top: 70%; left: 0%; left: 60; padding-left: 0%; align-items: center; z-index: 3; }
+header.header-main .home-title h1 { padding-left: 0%; font-size: 7vh; }
+@media screen and (max-width: 600px) { header.header-main .home-title { top: 20%; } }
+header.header-main a.home-avatar { position: absolute; z-index: 999; height: 180px; width: 180px; margin-top: 100px; border-radius: 60%; background-image: url("../img/fen.jpg"); background-size: cover; background-position: center center; background-repeat: no-repeat; }
+@media screen and (max-width: 600px) { header.header-main a.home-avatar { display: None; padding-bottom: 0; } }
 
-.intro { width: 100%; line-height: 1.8; }
-.intro h2 { padding-top: 7px; padding-left: 47%; font-weight: 400; }
-.intro p { font-family: "Lora", serif; padding-left: 10%; padding-right: 10%; word-spacing: 1.5px; font-size: 1.5em; color: #FFFFFF; animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
+.intro { position: absolute; width: 100%; line-height: 1.8; z-index: 555; }
+@media screen and (max-width: 600px) { .intro { top: 30%; } }
+.intro p { font-family: "Lora", serif; padding-left: 10%; padding-right: 10%; word-spacing: 1.5px; font-size: 2.3vh; color: #FFFFFF; animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
 .intro p a { display: inline-block; padding: 0px; margin: 0px; font-weight: 600; color: #34bFFF; transition: all 0.15s ease-in-out; }
 .intro p strong { color: #34bFFF; }
 
 .blog-index-header-main { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; max-width: 100%; height: 200px; max-height: 100vh; background: #343a40; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+@media screen and (max-width: 600px) { .blog-index-header-main { top: 50%; } }
 
 .blog-index-title { position: absolute; left: 0; z-index: 5; background: #343a40; max-height: 210px; max-width: 100%; padding-left: 20px; padding-top: 60px; max-width: 100%; }
-.blog-index-title h1.blog-head { font-family: "Lora", serif; background: #343a40; max-width: 100%; max-height: 120px; font-size: 3em; font-weight: 400; line-height: 1.2em; padding: 0 20px 0px 20px; color: #FFFFFF; margin: 30px 0; }
-.blog-index-title h2.welcome-info { max-width: 10 0%; font-size: 1.25em; font-weight: 500; word-spacing: 7px; line-height: 1.2em; color: #34bFFF; }
+.blog-index-title h1.blog-head { font-family: "Lora", serif; background: #343a40; max-width: 100%; max-height: 120px; font-size: 5vh; font-weight: 400; line-height: 4vh; padding-left: 10px; padding-right: 10px; color: #FFFFFF; margin: 30px 0; }
+.blog-index-title h2.welcome-info { font-size: 2.4vh; font-weight: 500; padding-left: 10px; padding-right: 10px; word-spacing: 0.4vh; line-height: 2.5vh; color: #34bFFF; }
+@media screen and (max-width: 600px) { .blog-index-title { top: 50%; } }
 
-.blogIndexWrapper { max-width: 100%; margin: 130px 0 20px 0; padding: 0 20px; flex-direction: column; justify-content: space-around; align-items: baseline; flex-wrap: wrap; }
+.blogIndexWrapper { max-width: 70%; margin: 4vh 0 20px 0; padding-left: 10px; padding-right: 10px; padding-top: 1vh; flex-direction: column; justify-content: space-around; align-items: baseline; flex-wrap: wrap; }
+@media screen and (max-width: 600px) { .blogIndexWrapper { max-width: 100%; margin: 20vh 0 20px 0; padding-top: 1vh; } }
 
 .blogPostContainer { display: block; border: 1px solid #FFFFFF; border-radius: 50px; max-width: 100%; height: auto; margin: 0 auto 40px auto; color: #FFFFFF; }
 
-.blogTitle { display: inline-block; color: #FFFFFF; padding-bottom: 0px; margin: 40px; margin-bottom: 0px; font-size: 2.3em; }
+.blogTitle { display: inline-block; color: #FFFFFF; padding-bottom: 0px; margin: 40px; margin-bottom: 0px; font-size: 3.5vh; }
 
 .blogCategory { position: relative; display: inline-block; margin: 40px; }
 
 .post-index-header-main { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; max-width: 100%; height: 200px; max-height: 100vh; background: #343a40; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
 .post-index-title { position: relative; left: 0; z-index: 5; background: #343a40; max-height: 210px; max-width: 100%; padding-left: 20px; padding-top: 60px; max-width: 100%; }
-.post-index-title h1.post-head { font-family: "Lora", serif; background: #343a40; max-width: 100%; max-height: 120px; font-size: 3em; font-weight: 400; line-height: 1.2em; padding: 0 20px 0px 0px; color: #FFFFFF; margin: 30px 0; }
+.post-index-title h1.post-head { font-family: "Lora", serif; background: #343a40; max-width: 100%; max-height: 120px; font-size: 5vh; font-weight: 400; line-height: 1.2em; padding: 0 20px 0px 0px; color: #FFFFFF; margin: 30px 0; }
 
 .blog-post-content-wrapper { max-width: 1800px; width: 100%; background: #343a40; margin: 0 auto; }
-.blog-post-content-wrapper p { position: relative; font-family: "Comic Neue", cursive; color: #FFFFFF; word-spacing: 7px; line-height: 1.8; font-size: 1.6em; }
-.blog-post-content-wrapper p a { color: #34bFFF; font-family: "Comic Neue", cursive; }
+.blog-post-content-wrapper quote { position: relative; font-family: "EB Garamond", serif; color: #34bFFF; word-spacing: 0.4vh; padding-left: 10px; line-height: 5vh; font-size: 2.15vh; padding-left: 2vh; padding-right: 2vh; }
+.blog-post-content-wrapper quote auth { padding-left: 10vh; padding-right: 10vh; }
+.blog-post-content-wrapper p { position: relative; font-family: "Lora", serif; color: #FFFFFF; word-spacing: 0.4vh; padding-left: 10px; line-height: 5vh; font-size: 2.1vh; padding-left: 2vh; padding-right: 2vh; }
+.blog-post-content-wrapper p a { color: #34bFFF; font-family: "Lora", serif; }
+.blog-post-content-wrapper p strong { color: #34bFFF; }
 .blog-post-content-wrapper img { display: block; align: center; margin: auto; width: 40%; overflow: hidden; border-radius: 5px; }
 
-h5.readMore { text-align: center; font-family: "Lora", serif; font-size: 1.6em; color: #FFFFFF; }
+h5.readMore { text-align: center; font-family: "Lora", serif; font-size: 3.2vh; color: #FFFFFF; }
