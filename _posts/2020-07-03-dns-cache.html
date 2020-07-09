@@ -1,0 +1,45 @@
+---
+layout: posts
+title: "DNS Cache Everywhere"
+category: tech
+author: fenilsuchak
+permalink: "/sugarcoated/tech/dns-cache.html"
+---
+
+<quote> "Follow the links and you will attain Nirvana" <br> <auth>- Maybe Kurt Cobain </auth></quote>
+
+<p> One Wednesday morning, I wake up and for some nostalgia I take by my Mac that I have donated to my sister, switch it on and forget to press-hold option key for boot menu to open and sure enough and boots directly to Ubuntu which I have dual booted my Mac with (yeah I know Linux on Mac wtf, but I found I'm not the only one you <a href = "https://www.phoronix.com/scan.php?page=news_item&px=Linux-5.3-MacBook-Key-Trackpads">see</a>).</p>
+
+<p> So while I was on it, I realized that my internet page response speed was quite better compared to Manjaro which is on my regular machine. On Manjaro for every gapped search I did had a weird delay in loading the page, even the websites that I visited just a while ago loaded slowly. I used to curse my ISP for the stupid slow time it took to load a page and now I realise it's my machines fault? No, can't be. It scratched that part of my mind again and I went to hunting. I suspected it was something to do with DNS. As I was told my networks prof(one of the few profs I like) that usually DNS issues are first to diagnose. So I dig it. </p>
+
+
+<p> These are on my ubuntu(Mac) machine dig outputs, along with time.</p>
+
+<img src = "{{ site.baseurl }}/assets/img/pic_a.png" alt = "Some Shit">
+<p></p>
+<img src = "{{ site.baseurl }}/assets/img/pic_b.png" alt = "Some Shit">
+
+<p> So this is fine, on the first request you can see the Query time, which is 980 ms and the real time ie. actual time taken for command to execute (time in <a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/5_CPU_Scheduling.html">time in cpu + time in blocking state</a>) is 5.some seconds. The second time when you run the same query, you have a <a href ="https://en.wikipedia.org/wiki/Daemon_(computing)">daemon</a> process running (background process) called <a href = "http://manpages.ubuntu.com/manpages/bionic/man8/systemd-resolved.service.8.html">systemd-resolved</a> (sucks at times though) which caches your dns query so the next time you the same query you dont have to wait for it to go and resolve at top level dns servers around the world but be able to find it locally stored in the RAM which will also avoid the process to go into blocking state, saves you some fraction there too. So, this is how exactly your dns daemon process should be caching your dns resolution queries.</p>
+
+
+<p> Coming to back to Manjaro. So I did this and to my correct guess there was no dns caching going on. Below you can see all of my requests are going to either <code style="background-color:white;">114.114.114.114 </code>(its in fucking china) or <code style="background-color:white;">8.8.8.8</code> (Google Public DNS) or <code style="background-color:white;">192.168.101.1</code>(my local router) and looking at the time it took (you can find all the listed dns servers in your /etc/resolv.conf file), it was clear that no caching is done at os level. [drill is the big brother of dig so dont get mad]</p>
+
+<img src =  "{{ site.baseurl }}/assets/img/before_dns.png"> 
+
+
+<p> Time to fix this now, enter <a href = "https://wiki.debian.org/dnsmasq">dnsmasq</a> an open source tool for dns caching, I had to manually configure it and it's one of the things I love, it puts me in a meditative state. I didn't know I already had systemd-resolved at the time and that I just had to systemctl it but fuck it setting up dnsmasq was fun. So I did it with some help from <a href="https://wiki.archlinux.org/index.php/dnsmasq">arch wiki.</a></p>
+
+
+<p> So fast forward and configured. Now everytime I query something the first query goes to which ever top DNS server it can find the resolution and from the second time onwards it is picked from my os cache with almost zero lookup time. See below. </p>
+<img src = "{{ site.baseurl }}/assets/img/after_dns1.png">
+<img src = "{{ site.baseurl }}/assets/img/after_dns2.png">
+
+
+<p> Another place where your DNS cache gets stored is your browser. Your browser has also a cache of its own, on a miss it looks up your os level cache, then your router and so on.. Browser caches have a small ttl (time to live), default for Firefox is 120 seconds (can track your browser cache at <code style="background-color:white;">about:networking#dns</code>) and recent chrome versions apparently dont show browser cache, you can obviously configure the ttl to a high value but then browsers already eat up a lot of my RAM so I refuse to do that.</p>
+
+<p> Use the below command to check if systemd-resolved is running</p>
+<p><code style="background-color:white;">systemctl status systemd-resolved</code></p>
+<p> if not running then do <code style="background-color:white;">systemctl start systemd-resolved </code> or you can download and checkout dnsmasq as well as I've done.</p>
+
+
+<p>Ok bye.</p>

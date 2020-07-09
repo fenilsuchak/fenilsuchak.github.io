@@ -135,24 +135,26 @@ p { font-family: "Lora", serif; }
 header.header-main { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; width: 100%; height: 500px; line-height: 1.8; }
 header.header-main .overlay-light { position: absolute; z-index: 2; top: 0; right: 0; bottom: 0; left: 0; background: #2d2d2d; opacity: 0.9; }
 header.header-main .home-title { position: relative; top: 70%; left: 0%; padding-left: 0%; align-items: center center; z-index: 3; }
-header.header-main .home-title h1 { padding-left: 0%; font-size: 7vh; }
-@media screen and (max-width: 768px) { header.header-main .home-title { top: 20%; padding-left: 0%; } }
+header.header-main .home-title h1 { padding-left: 0vh; font-size: 7vh; }
+@media screen and (max-width: 768px) { header.header-main .home-title { top: 20%; padding-left: 2%; } }
 header.header-main a.home-avatar { position: absolute; z-index: 10; height: 180px; width: 180px; margin-top: 15vh; border-radius: 60%; margin-left: -1.5%; background-image: url("../img/fen.jpg"); background-size: cover; background-position: center center; background-repeat: no-repeat; }
 @media screen and (max-width: 768px) { header.header-main a.home-avatar { display: None; padding-bottom: 0; } }
 
 .intro { position: absolute; width: 100%; line-height: 1.8; z-index: 555; }
 @media screen and (max-width: 768px) { .intro { top: 30%; } }
 .intro p { font-family: "Lora", serif; padding-left: 10%; padding-right: 10%; word-spacing: 1.5px; font-size: 2.3vh; color: #FFFFEC; animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
+@media screen and (max-width: 768px) { .intro p { padding-left: 4%; padding-right: 3%; } }
 .intro p a { display: inline-block; padding: 0px; margin: 0px; font-weight: 768; color: #34bFFF; transition: all 0.15s ease-in-out; }
 .intro p strong { color: #34bFFF; }
 
 .blog-index-title { position: absolute; left: 0; z-index: 5; max-height: 210px; max-width: 100%; padding-left: 20px; padding-top: 7vh; max-width: 100%; }
 .blog-index-title h1.blog-head { font-family: "Lora", serif; background: #2d2d2d; max-width: 100%; max-height: 120px; font-size: 5vh; font-weight: 400; line-height: 4vh; padding-left: 10px; padding-right: 10px; color: #FFFFFF; }
 .blog-index-title h2.welcome-info { font-size: 2.1vh; font-weight: 500; padding-left: 10px; padding-right: 10px; word-spacing: 0.4vh; line-height: 2.5vh; color: #34bFFF; padding-top: 3vh; }
-@media screen and (max-width: 768px) { .blog-index-title { top: 20%; padding-top: 0vh; } }
+@media screen and (max-width: 768px) { .blog-index-title h2.welcome-info { font-size: 1.5vh; } }
+@media screen and (max-width: 768px) { .blog-index-title { top: 10%; padding-top: 0vh; } }
 
 .blogIndexWrapper { max-width: 70%; margin: 4em 0 20px 0; padding-left: 10px; padding-right: 10px; padding-top: 20vh; flex-direction: column; justify-content: space-around; align-items: baseline; flex-wrap: wrap; }
-@media screen and (max-width: 768px) { .blogIndexWrapper { max-width: 100%; margin: 20em 0 20px 0; padding-top: 1vh; } }
+@media screen and (max-width: 768px) { .blogIndexWrapper { max-width: 100%; margin: 14em 0 20px 0; padding-top: 1vh; } }
 
 .blogPostContainer { display: block; border: 1px solid #FFFFEC; border-radius: 50px; max-width: 100%; height: auto; margin: 0 auto 40px auto; color: #FFFFFF; }
 
@@ -168,8 +170,8 @@ header.header-main a.home-avatar { position: absolute; z-index: 10; height: 180p
 @media screen and (max-width: 768px) { .blog-post-content-wrapper quote { font-size: 2vh; } }
 .blog-post-content-wrapper quote auth { padding-left: 2vh; background: #FFFFEC; padding-left: 10vh; padding-right: 10vh; }
 @media screen and (max-width: 768px) { .blog-post-content-wrapper quote auth { font-size: 2vh; } }
-.blog-post-content-wrapper p { background: #FFFFEC; position: relative; padding-left: 2vh; font-family: "Lora", serif; color: #000000; margin-bottom: 0; padding-bottom: 0; word-spacing: 0.2vh; line-height: 4vh; font-size: 2.1vh; padding-right: 2vh; font-weight: 500; }
-.blog-post-content-wrapper p a { color: #347FFF; font-weight: 500; background: #FFFFEC; font-family: "Lora", serif; }
+.blog-post-content-wrapper p { background: #FFFFEC; position: relative; padding-left: 2vh; font-family: "Lora", serif; color: #000000; margin-bottom: 0; padding-bottom: 0; word-spacing: 0.2vh; line-height: 4vh; font-size: 2.1vh; padding-right: 2vh; font-weight: 550; }
+.blog-post-content-wrapper p a { display: inline-block; padding: 0px; margin: 0px; font-weight: 768; color: #347FFF; }
 .blog-post-content-wrapper p strong { background: #FFFFEC; color: #347FFF; }
 @media screen and (max-width: 768px) { .blog-post-content-wrapper p { font-size: 1.8vh; line-height: 3.5vh; } }
 .blog-post-content-wrapper img { display: block; align: center; margin: auto; width: 40%; overflow: hidden; border-radius: 5px; }
