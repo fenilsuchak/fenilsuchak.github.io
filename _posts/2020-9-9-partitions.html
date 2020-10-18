@@ -1,0 +1,58 @@
+---
+layout: posts
+title: "Seperate home"
+category: tech
+author: fenilsuchak
+permalink: "/sugarcoated/tech/seperate-home.html"
+---
+
+<p>After using manjaro for over a year and falling in love with it, it started breaking way too frequently. With every <code  style="background-color:white;">pacman -Syu</code>, which is unavoidable if you are using Arch, something crashed for sure. Sometimes a kernel update would break it and sometimes a driver would just not work anymore. As a result manjaro wont boot up anymore, sometimes giving an error at boot or sometimes just hangs at the splash screen. You downgrade the kernel to the previous one and it just wont work. This used to happen every weekend and my whole weekend would be me googling my way out, posting it on Manjaro forums, waiting for a reply, booting in via liveusb, using chroot, changing something here, changing something there, damn it is painful. If it once in a while it is cool but not every weekend, NO.</p>
+
+<p>So I decided I wasn't going to fix it the next time something broke for no reason, instead I would do a fresh install of latest version. So Fenil, you mean to say backup the important data somewhere, sit selecting the important stuff, copy them and wait for the huge files to transfer, if not enough space then copy the rest somewhere else? Hell No. There's an easy way out.</p>
+
+<p>I was fortunate enough to bump into an article while installing manjaro for the first time which suggested me to have a seperate /root and /home partition, I didn't know the use case back then but did it anyway. Now I know why.</p>
+
+
+<p>If you have "cooked" <code  style="background-color:white;"> /root </code> and <code  style="background-color:white;">/home </code>paritions seperately you have made the <strong>"OS"</strong> data and your <strong>"User"</strong> data essentially independent and kept them in seperate boxes. Now every time your <code  style="background-color:white;"> /root </code>  box breaks (where all the OS stuff lies) you just have to replace the <code  style="background-color:white;"> /root </code>  box with the new OS and attach (aka mount) the existing <code  style="background-color:white;"> /home </code>  box at a specific location (<code  style="background-color:white;"> /home </code>  directory of the new OS) so that the <code  style="background-color:white;"> /home </code>  box is mounted when the new OS boots up.
+
+<p>Let me walk you through. This is wrt to manjaro-installer but its the same with other linux based OS installers as well.</p>
+
+<p>Re-installing manjaro using live-usb on existing root partition.</p>
+
+<img src = "{{ site.baseurl }}/assets/img/parition_home.png" alt = "Some Shit">
+
+
+
+<p>This replaces Manjaro with the other OS (Updated version of Manjaro in this case) on the root partition. You can see an option to re-use home parition for the new OS. You just select it and you are done, the new working OS with all your data intact. But all the OS installers wont have this option during install and you'd need to do it manually, but its super easy.</p>
+
+<p>After fresh install boot up the OS and open <code  style="background-color:white;"> /etc/fstab </code>. You should see two paritions one is <code  style="background-color:white;"> /boot/efi </code> and the other is <code  style="background-color:white;"> /root </code>.</p>
+
+<img src = "{{ site.baseurl }}/assets/img/before_home.png" alt = "Some Shit">
+
+<p>What is missing is the <code  style="background-color:white;"> /home </code> parition info</p>.
+
+
+<p>Now to identify which was your home parition before you need to know something about it like the size or maybe partition type so
+
+you can identify it from this list because it currently isn't mounted anywhere so you can get no clear identifier.
+
+So do <code  style="background-color:white;"> lsblk </code> and I remember the size of my home parition was 130G (nvmpe0n1p8) (note - here mount point is <code  style="background-color:white;"> /home </code> as I had already mounted it, it wont be visible to you).</p>
+
+<p>then doing
+<code  style="background-color:white;"> sudo blkid </code></p>
+
+<img src = "{{ site.baseurl }}/assets/img/lsblk_blkid.png" alt = "Some Shit">
+
+<p>Copy the UUID corresponding to nvmpe0n1p8 and add an entry in <code  style="background-color:white;"> /etc/fstab </code> like this.</p>
+
+
+<img src = "{{ site.baseurl }}/assets/img/after_home.png" alt = "Some Shit">
+
+<p>Thats it just reboot now and you have a new OS with all your data intact. This also works if you want to try some different distribution (with some caveats) without losing or moving your data.</p>
+
+
+<p>So I started doing this everytime an update breaks something and I'm back up and running in 10 mins. But it has some drawbacks too, but I ignore them given the time gain.</p>
+
+<p>I've seen quite a few linux users not having a seperate home partition. So the next time you are installing any flavour of linux from scratch (or dual booting) make sure you have a seperate home.</p>
+
+<p>Ok, Bye.</p>
